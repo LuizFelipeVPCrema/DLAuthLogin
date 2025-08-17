@@ -1,0 +1,87 @@
+# English Translation for DLAuthLogin
+
+# General Messages
+general:
+  prefix: "&8[&cDLAuth&8] &r"
+  no_permission: "&cYou don't have permission to use this command!"
+  player_only: "&cThis command can only be used by players!"
+  invalid_syntax: "&cInvalid syntax! Use: {usage}"
+
+# Login Messages
+login:
+  success: "&aLogin successful! Welcome to the server!"
+  failed: "&cIncorrect password! Attempt {attempt}/{max_attempts}"
+  already_logged: "&cYou are already logged in!"
+  not_registered: "&cYou are not registered! Use /register <password> <confirm_password>"
+  timeout: "&cLogin timeout expired! You have been disconnected."
+  locked: "&cAccount locked for {time} seconds due to multiple failed attempts."
+  usage: "&eUsage: /login <password>"
+
+# Register Messages
+register:
+  success: "&aAccount registered successfully! Use /login <password> to enter."
+  already_registered: "&cYou are already registered! Use /login <password>"
+  password_mismatch: "&cPasswords do not match!"
+  password_too_weak: "&cPassword too weak! Password must have at least {min_length} characters and contain letters and numbers."
+  password_too_short: "&cPassword too short! Minimum {min_length} characters."
+  password_too_long: "&cPassword too long! Maximum {max_length} characters."
+  usage: "&eUsage: /register <password> <confirm_password>"
+
+# Change Password Messages
+changepassword:
+  success: "&aPassword changed successfully!"
+  current_password_incorrect: "&cCurrent password is incorrect!"
+  new_password_mismatch: "&cNew passwords do not match!"
+  new_password_same: "&cNew password must be different from current password!"
+  usage: "&eUsage: /changepassword <current_password> <new_password> <confirm_new_password>"
+
+# Unregister Messages
+unregister:
+  success: "&aAccount removed successfully!"
+  password_incorrect: "&cIncorrect password!"
+  usage: "&eUsage: /unregister <password>"
+
+# Protection Messages
+protection:
+  movement_blocked: "&cYou need to login before moving!"
+  interaction_blocked: "&cYou need to login before interacting!"
+  chat_blocked: "&cYou need to login before using chat!"
+  command_blocked: "&cYou need to login before using commands!"
+  damage_blocked: "&cYou cannot take damage before logging in!"
+
+# Session Messages
+session:
+  expired: "&cYour session has expired! Please login again."
+  restored: "&aSession restored! Welcome back!"
+
+# Admin Messages
+admin:
+  reload_success: "&aConfiguration reloaded successfully!"
+  player_not_found: "&cPlayer not found!"
+  player_not_registered: "&cPlayer is not registered!"
+  player_already_logged: "&cPlayer is already logged in!"
+  force_login_success: "&aForced login for {player}!"
+  force_logout_success: "&aForced logout for {player}!"
+
+# Error Messages
+error:
+  database_connection: "&cError connecting to database!"
+  database_error: "&cDatabase error!"
+  encryption_error: "&cEncryption error!"
+  unknown_error: "&cUnknown error! Contact an administrator."
+
+# Info Messages
+info:
+  login_required: "&ePlease login to continue."
+  register_required: "&ePlease register to continue."
+  session_info: "&eSession valid for {time} more minutes."
+  password_requirements: "&ePassword must have at least {min_length} characters and contain letters and numbers."
+
+# Log Messages
+log:
+  login_attempt: "&7[LOG] {player} attempted to login"
+  login_success: "&7[LOG] {player} logged in successfully"
+  login_failed: "&7[LOG] {player} failed to login"
+  register_success: "&7[LOG] {player} registered a new account"
+  password_change: "&7[LOG] {player} changed their password"
+  unregister_success: "&7[LOG] {player} removed their account"

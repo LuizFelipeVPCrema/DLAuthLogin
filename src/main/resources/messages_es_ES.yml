@@ -1,0 +1,87 @@
+# Traducción en Español para DLAuthLogin
+
+# Mensajes Generales
+general:
+  prefix: "&8[&cDLAuth&8] &r"
+  no_permission: "&c¡No tienes permiso para usar este comando!"
+  player_only: "&c¡Este comando solo puede ser usado por jugadores!"
+  invalid_syntax: "&c¡Sintaxis inválida! Usa: {usage}"
+
+# Mensajes de Login
+login:
+  success: "&a¡Login exitoso! ¡Bienvenido al servidor!"
+  failed: "&c¡Contraseña incorrecta! Intento {attempt}/{max_attempts}"
+  already_logged: "&c¡Ya estás conectado!"
+  not_registered: "&c¡No estás registrado! Usa /register <contraseña> <confirmar_contraseña>"
+  timeout: "&c¡Tiempo de login expirado! Has sido desconectado."
+  locked: "&cCuenta bloqueada por {time} segundos debido a múltiples intentos fallidos."
+  usage: "&eUso: /login <contraseña>"
+
+# Mensajes de Registro
+register:
+  success: "&a¡Cuenta registrada exitosamente! Usa /login <contraseña> para entrar."
+  already_registered: "&c¡Ya estás registrado! Usa /login <contraseña>"
+  password_mismatch: "&c¡Las contraseñas no coinciden!"
+  password_too_weak: "&c¡Contraseña muy débil! La contraseña debe tener al menos {min_length} caracteres y contener letras y números."
+  password_too_short: "&c¡Contraseña muy corta! Mínimo {min_length} caracteres."
+  password_too_long: "&c¡Contraseña muy larga! Máximo {max_length} caracteres."
+  usage: "&eUso: /register <contraseña> <confirmar_contraseña>"
+
+# Mensajes de Cambio de Contraseña
+changepassword:
+  success: "&a¡Contraseña cambiada exitosamente!"
+  current_password_incorrect: "&c¡Contraseña actual incorrecta!"
+  new_password_mismatch: "&c¡Las nuevas contraseñas no coinciden!"
+  new_password_same: "&c¡La nueva contraseña debe ser diferente a la actual!"
+  usage: "&eUso: /changepassword <contraseña_actual> <nueva_contraseña> <confirmar_nueva_contraseña>"
+
+# Mensajes de Eliminación de Cuenta
+unregister:
+  success: "&a¡Cuenta eliminada exitosamente!"
+  password_incorrect: "&c¡Contraseña incorrecta!"
+  usage: "&eUso: /unregister <contraseña>"
+
+# Mensajes de Protección
+protection:
+  movement_blocked: "&c¡Necesitas hacer login antes de moverte!"
+  interaction_blocked: "&c¡Necesitas hacer login antes de interactuar!"
+  chat_blocked: "&c¡Necesitas hacer login antes de usar el chat!"
+  command_blocked: "&c¡Necesitas hacer login antes de usar comandos!"
+  damage_blocked: "&c¡No puedes recibir daño antes de hacer login!"
+
+# Mensajes de Sesión
+session:
+  expired: "&c¡Tu sesión ha expirado! Por favor, haz login nuevamente."
+  restored: "&a¡Sesión restaurada! ¡Bienvenido de vuelta!"
+
+# Mensajes de Admin
+admin:
+  reload_success: "&a¡Configuración recargada exitosamente!"
+  player_not_found: "&c¡Jugador no encontrado!"
+  player_not_registered: "&c¡Jugador no está registrado!"
+  player_already_logged: "&c¡Jugador ya está conectado!"
+  force_login_success: "&a¡Login forzado para {player}!"
+  force_logout_success: "&a¡Logout forzado para {player}!"
+
+# Mensajes de Error
+error:
+  database_connection: "&c¡Error al conectar con la base de datos!"
+  database_error: "&c¡Error en la base de datos!"
+  encryption_error: "&c¡Error en la encriptación!"
+  unknown_error: "&c¡Error desconocido! Contacta a un administrador."
+
+# Mensajes de Información
+info:
+  login_required: "&ePor favor, haz login para continuar."
+  register_required: "&ePor favor, regístrate para continuar."
+  session_info: "&eSesión válida por {time} minutos más."
+  password_requirements: "&eLa contraseña debe tener al menos {min_length} caracteres y contener letras y números."
+
+# Mensajes de Log
+log:
+  login_attempt: "&7[LOG] {player} intentó hacer login"
+  login_success: "&7[LOG] {player} hizo login exitosamente"
+  login_failed: "&7[LOG] {player} falló en el login"
+  register_success: "&7[LOG] {player} registró una nueva cuenta"
+  password_change: "&7[LOG] {player} cambió su contraseña"
+  unregister_success: "&7[LOG] {player} eliminó su cuenta"

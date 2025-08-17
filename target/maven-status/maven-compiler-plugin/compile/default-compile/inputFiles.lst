@@ -1,0 +1,17 @@
+C:\Users\luizf\IdeaProjects\DLAuthLogin\src\main\java\org\setbk\dLAuthLogin\commands\ChangePasswordCommand.java
+C:\Users\luizf\IdeaProjects\DLAuthLogin\src\main\java\org\setbk\dLAuthLogin\commands\LoginCommand.java
+C:\Users\luizf\IdeaProjects\DLAuthLogin\src\main\java\org\setbk\dLAuthLogin\commands\RegisterCommand.java
+C:\Users\luizf\IdeaProjects\DLAuthLogin\src\main\java\org\setbk\dLAuthLogin\commands\ReloadCommand.java
+C:\Users\luizf\IdeaProjects\DLAuthLogin\src\main\java\org\setbk\dLAuthLogin\commands\UnregisterCommand.java
+C:\Users\luizf\IdeaProjects\DLAuthLogin\src\main\java\org\setbk\dLAuthLogin\DLAuthLogin.java
+C:\Users\luizf\IdeaProjects\DLAuthLogin\src\main\java\org\setbk\dLAuthLogin\listeners\PlayerListener.java
+C:\Users\luizf\IdeaProjects\DLAuthLogin\src\main\java\org\setbk\dLAuthLogin\listeners\ProtectionListener.java
+C:\Users\luizf\IdeaProjects\DLAuthLogin\src\main\java\org\setbk\dLAuthLogin\managers\AuthManager.java
+C:\Users\luizf\IdeaProjects\DLAuthLogin\src\main\java\org\setbk\dLAuthLogin\managers\ConfigManager.java
+C:\Users\luizf\IdeaProjects\DLAuthLogin\src\main\java\org\setbk\dLAuthLogin\managers\DatabaseManager.java
+C:\Users\luizf\IdeaProjects\DLAuthLogin\src\main\java\org\setbk\dLAuthLogin\managers\LogManager.java
+C:\Users\luizf\IdeaProjects\DLAuthLogin\src\main\java\org\setbk\dLAuthLogin\managers\MessageManager.java
+C:\Users\luizf\IdeaProjects\DLAuthLogin\src\main\java\org\setbk\dLAuthLogin\managers\ProtectionManager.java
+C:\Users\luizf\IdeaProjects\DLAuthLogin\src\main\java\org\setbk\dLAuthLogin\managers\SessionManager.java
+C:\Users\luizf\IdeaProjects\DLAuthLogin\src\main\java\org\setbk\dLAuthLogin\models\Account.java
+C:\Users\luizf\IdeaProjects\DLAuthLogin\src\main\java\org\setbk\dLAuthLogin\utils\PasswordUtils.java

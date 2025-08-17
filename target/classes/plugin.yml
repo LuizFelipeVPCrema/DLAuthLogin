@@ -1,0 +1,48 @@
+name: DLAuthLogin
+version: '1.0-SNAPSHOT'
+main: org.setbk.dLAuthLogin.DLAuthLogin
+api-version: '1.21'
+authors: [ Luiz F. V. P. C. ]
+description: Plugin de autenticação seguro com suporte a múltiplos idiomas
+
+commands:
+  login:
+    description: Faz login no servidor
+    usage: /login <senha>
+    permission: dlauthlogin.login
+  register:
+    description: Registra uma nova conta
+    usage: /register <senha> <confirmar_senha>
+    permission: dlauthlogin.register
+  changepassword:
+    description: Altera a senha da conta
+    usage: /changepassword <senha_atual> <nova_senha> <confirmar_nova_senha>
+    permission: dlauthlogin.changepassword
+  unregister:
+    description: Remove a conta do jogador
+    usage: /unregister <senha>
+    permission: dlauthlogin.unregister
+  reload:
+    description: Recarrega as configurações do plugin
+    usage: /dlauthlogin reload
+    permission: dlauthlogin.admin
+
+permissions:
+  dlauthlogin.login:
+    description: Permite fazer login
+    default: true
+  dlauthlogin.register:
+    description: Permite registrar uma conta
+    default: true
+  dlauthlogin.changepassword:
+    description: Permite alterar a senha
+    default: true
+  dlauthlogin.unregister:
+    description: Permite remover a conta
+    default: true
+  dlauthlogin.admin:
+    description: Permissões administrativas
+    default: op
+  dlauthlogin.bypass:
+    description: Bypass do sistema de login
+    default: op

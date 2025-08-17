@@ -1,0 +1,87 @@
+# Configuração do DLAuthLogin
+# Plugin de autenticação seguro para Minecraft
+
+# Configurações de Segurança
+security:
+  # Força mínima da senha (1-6, onde 6 é muito forte)
+  # 1 = Muito fraca (apenas letras)
+  # 2 = Fraca (letras + números)
+  # 3 = Média (letras + números + 8+ caracteres)
+  # 4 = Boa (letras + números + maiúsculas/minúsculas)
+  # 5 = Forte (letras + números + caracteres especiais)
+  # 6 = Muito forte (todos os critérios)
+  password_strength: 3
+  # Tempo máximo para fazer login (em segundos)
+  login_timeout: 60
+  # Número máximo de tentativas de login
+  max_login_attempts: 3
+  # Tempo de bloqueio após tentativas falhadas (em segundos)
+  lockout_duration: 300
+  # Usar BCrypt com salt personalizado
+  use_bcrypt: true
+  # Rounds do BCrypt (10-12 recomendado)
+  bcrypt_rounds: 12
+
+# Configurações do Banco de Dados
+database:
+  # Tipo de banco: H2, MYSQL, SQLITE
+  type: H2
+  # Configurações para H2
+  h2:
+    file: "accounts"
+    auto_backup: true
+    backup_interval: 24 # horas
+  # Configurações para MySQL (se usado)
+  mysql:
+    host: "localhost"
+    port: 3306
+    database: "dlauthlogin"
+    username: "root"
+    password: "password"
+    use_ssl: false
+
+# Configurações de Mensagens
+messages:
+  # Idioma padrão (pt_BR, en_US, es_ES, etc.)
+  default_language: "pt_BR"
+  # Prefixo das mensagens
+  prefix: "&8[&cDLAuth&8] &r"
+
+# Configurações de Proteção
+protection:
+  # Bloquear movimento antes do login
+  block_movement: true
+  # Bloquear interação com blocos
+  block_block_interaction: true
+  # Bloquear interação com entidades
+  block_entity_interaction: true
+  # Bloquear uso de itens
+  block_item_use: true
+  # Bloquear chat
+  block_chat: true
+  # Bloquear dano
+  block_damage: true
+  # Bloquear teleporte
+  block_teleport: true
+  # Bloquear comandos (exceto login/register)
+  block_commands: true
+
+# Configurações de Sessão
+session:
+  # Manter sessão ativa após reconexão
+  keep_session: true
+  # Tempo de expiração da sessão (em minutos)
+  session_timeout: 30
+  # Verificar IP na sessão
+  check_ip: false
+
+# Configurações de Log
+logging:
+  # Log de tentativas de login
+  log_login_attempts: true
+  # Log de registros
+  log_registrations: true
+  # Log de alterações de senha
+  log_password_changes: true
+  # Log de remoções de conta
+  log_unregistrations: true

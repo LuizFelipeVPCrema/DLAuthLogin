@@ -1,0 +1,90 @@
+# Tradução em Português Brasileiro para DLAuthLogin
+
+# Mensagens Gerais
+general:
+  prefix: "&8[&cDLAuth&8] &r"
+  no_permission: "&cVocê não tem permissão para usar este comando!"
+  player_only: "&cEste comando só pode ser usado por jogadores!"
+  invalid_syntax: "&cSintaxe inválida! Use: {usage}"
+
+# Mensagens de Login
+login:
+  success: "&a Login realizado com sucesso! Bem-vindo(a) ao servidor!"
+  failed: "&c Senha incorreta! Tentativa {attempt}/{max_attempts}"
+  already_logged: "&cVocê já está logado!"
+  protection_removed: "&aProteção removida! Você já estava logado."
+  not_registered: "&cVocê não está registrado! Use /register <senha> <confirmar_senha>"
+  timeout: "&cTempo limite de login expirado! Você foi desconectado."
+  locked: "&cConta bloqueada por {time} segundos devido a múltiplas tentativas falhadas."
+  usage: "&e Uso: /login <senha>"
+
+# Mensagens de Registro
+register:
+  success: "&a Conta registrada com sucesso! Use /login <senha> para entrar."
+  already_registered: "&cVocê já está registrado! Use /login <senha>"
+  password_mismatch: "&c As senhas não coincidem!"
+  password_too_weak: "&c Senha muito fraca! Força atual: {current_strength}/6, Necessário: {strength_required}/6. A senha deve ter pelo menos {min_length} caracteres e conter letras e números."
+  password_too_short: "&c Senha muito curta! Mínimo de {min_length} caracteres."
+  password_too_long: "&c Senha muito longa! Máximo de {max_length} caracteres."
+  usage: "&e📝 Uso: /register <senha> <confirmar_senha>"
+
+# Mensagens de Alteração de Senha
+changepassword:
+  success: "&aSenha alterada com sucesso!"
+  current_password_incorrect: "&cSenha atual incorreta!"
+  new_password_mismatch: "&cAs novas senhas não coincidem!"
+  new_password_same: "&cA nova senha deve ser diferente da atual!"
+  usage: "&eUso: /changepassword <senha_atual> <nova_senha> <confirmar_nova_senha>"
+
+# Mensagens de Remoção de Conta
+unregister:
+  success: "&aConta removida com sucesso!"
+  password_incorrect: "&cSenha incorreta!"
+  usage: "&eUso: /unregister <senha>"
+
+# Mensagens de Proteção
+protection:
+  movement_blocked: "&cVocê precisa se autenticar antes de se mover!"
+  interaction_blocked: "&cVocê precisa se autenticar antes de interagir!"
+  chat_blocked: "&cVocê precisa se autenticar antes de usar o chat!"
+  command_blocked: "&cVocê precisa se autenticar antes de usar comandos!"
+  damage_blocked: "&cVocê não pode sofrer dano antes de se autenticar!"
+  teleport_blocked: "&cVocê precisa se autenticar antes de se teleportar!"
+
+# Mensagens de Sessão
+session:
+  expired: "&cSua sessão expirou! Faça login novamente."
+  restored: "&aSessão restaurada! Bem-vindo(a) de volta!"
+
+# Mensagens de Admin
+admin:
+  reload_success: "&aConfiguração recarregada com sucesso!"
+  player_not_found: "&cJogador não encontrado!"
+  player_not_registered: "&cJogador não está registrado!"
+  player_already_logged: "&cJogador já está logado!"
+  force_login_success: "&aLogin forçado para {player}!"
+  force_logout_success: "&aLogout forçado para {player}!"
+
+# Mensagens de Erro
+error:
+  database_connection: "&cErro ao conectar com o banco de dados!"
+  database_error: "&cErro no banco de dados!"
+  encryption_error: "&cErro na criptografia!"
+  login_timeout: "&cTempo limite de login excedido! Você foi expulso do servidor."
+  unknown_error: "&cErro desconhecido! Contate um administrador."
+
+# Mensagens de Informação
+info:
+  login_required: "&e⚠️ Você precisa fazer login para usar o servidor!"
+  register_required: "&e⚠️ Você precisa se registrar para usar o servidor!"
+  session_info: "&eSessão válida por mais {time} minutos."
+  password_requirements: "&e📋 Requisitos de senha: Mínimo {min_length} caracteres, letras + números. Força recomendada: {strength_required}/6"
+
+# Mensagens de Log
+log:
+  login_attempt: "&7[LOG] {player} tentou fazer login"
+  login_success: "&7[LOG] {player} fez login com sucesso"
+  login_failed: "&7[LOG] {player} falhou no login"
+  register_success: "&7[LOG] {player} registrou uma nova conta"
+  password_change: "&7[LOG] {player} alterou sua senha"
+  unregister_success: "&7[LOG] {player} removeu sua conta"
