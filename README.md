@@ -1,6 +1,8 @@
 # DLAuthLogin - Plugin de Autenticação para Minecraft
 
-<img width="612" height="408" alt="DLAuthLoginLogoNoBackground" style="text-align: center;" src="https://github.com/user-attachments/assets/2cdec5f0-2965-4538-a126-cedba08f32db" />
+<div align="center">
+  <img width="640" height="480" alt="DLAuthLogo" src="https://github.com/user-attachments/assets/8f83fbef-6c55-4fea-a821-302fea3efb6f" />
+</div>
 
 [![Java](https://img.shields.io/badge/Java-8+-orange.svg)](https://java.com/)
 [![Bukkit](https://img.shields.io/badge/Bukkit-1.13+-green.svg)](https://www.spigotmc.org/)
