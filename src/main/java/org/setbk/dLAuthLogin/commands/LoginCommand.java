@@ -22,7 +22,7 @@ public class LoginCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player)) {
-            sender.sendMessage(plugin.getMessageManager().getMessage("general.player_only"));
+            plugin.getMessageManager().sendSimpleMessage(sender, "general.player_only");
             return true;
         }
         
@@ -31,7 +31,7 @@ public class LoginCommand implements CommandExecutor {
         
         // Verificar permissão
         if (!player.hasPermission("dlauthlogin.login")) {
-            player.sendMessage(plugin.getMessageManager().getMessage("general.no_permission"));
+            plugin.getMessageManager().sendSimpleMessage(player, "general.no_permission");
             return true;
         }
         
@@ -40,22 +40,22 @@ public class LoginCommand implements CommandExecutor {
             // Se está logado mas ainda está protegido, remover proteção
             if (plugin.getProtectionManager().isProtected(uuid)) {
                 plugin.getProtectionManager().removeProtectedPlayer(uuid);
-                player.sendMessage(plugin.getMessageManager().getMessage("login.protection_removed"));
+                plugin.getMessageManager().sendBoxMessage(player, "login.protection_removed");
             } else {
-                player.sendMessage(plugin.getMessageManager().getMessage("login.already_logged"));
+                plugin.getMessageManager().sendBoxMessage(player, "login.already_logged");
             }
             return true;
         }
         
         // Verificar se está registrado
         if (!plugin.getAuthManager().isRegistered(uuid)) {
-            player.sendMessage(plugin.getMessageManager().getMessage("login.not_registered"));
+            plugin.getMessageManager().sendBoxMessage(player, "login.not_registered");
             return true;
         }
         
         // Verificar argumentos
         if (args.length != 1) {
-            player.sendMessage(plugin.getMessageManager().getMessage("login.usage"));
+            plugin.getMessageManager().sendBoxMessage(player, "login.usage");
             return true;
         }
         
@@ -66,7 +66,7 @@ public class LoginCommand implements CommandExecutor {
         
         if (success) {
             // Login bem-sucedido
-            player.sendMessage(plugin.getMessageManager().getMessage("login.success"));
+            plugin.getMessageManager().sendBoxMessage(player, "login.success");
             
             // Log da tentativa
             plugin.getLogManager().logLoginAttempt(player);
@@ -78,12 +78,12 @@ public class LoginCommand implements CommandExecutor {
                 long remainingTime = (account.getLockedUntil().getTime() - System.currentTimeMillis()) / 1000;
                 Map<String, String> placeholders = new HashMap<>();
                 placeholders.put("time", String.valueOf(remainingTime));
-                player.sendMessage(plugin.getMessageManager().getMessage("login.locked", placeholders));
+                plugin.getMessageManager().sendBoxMessage(player, "login.locked", placeholders);
             } else {
                 Map<String, String> placeholders = new HashMap<>();
                 placeholders.put("attempt", String.valueOf(account != null ? account.getLoginAttempts() : 1));
                 placeholders.put("max_attempts", String.valueOf(plugin.getConfigManager().getMaxLoginAttempts()));
-                player.sendMessage(plugin.getMessageManager().getMessage("login.failed", placeholders));
+                plugin.getMessageManager().sendBoxMessage(player, "login.failed", placeholders);
             }
         }
         

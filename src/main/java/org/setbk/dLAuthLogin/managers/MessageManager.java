@@ -233,4 +233,151 @@ public class MessageManager {
         String message = getMessage(path);
         return processColors(message);
     }
+    
+    /**
+     * Envia uma mensagem em caixa ASCII para um jogador
+     * @param player O jogador que receberá a mensagem
+     * @param basePath O caminho base da mensagem (ex: "login.success")
+     */
+    public void sendBoxMessage(org.bukkit.entity.Player player, String basePath) {
+        sendBoxMessage(player, basePath, null);
+    }
+    
+    /**
+     * Envia uma mensagem em caixa ASCII para um jogador com placeholders
+     * @param player O jogador que receberá a mensagem
+     * @param basePath O caminho base da mensagem (ex: "login.success")
+     * @param placeholders Os placeholders para substituir na mensagem
+     */
+    public void sendBoxMessage(org.bukkit.entity.Player player, String basePath, Map<String, String> placeholders) {
+        // Enviar a linha superior da caixa
+        String topLine = getMessage(basePath);
+        if (topLine != null && !topLine.contains("Mensagem não encontrada")) {
+            player.sendMessage(topLine);
+        }
+        
+        // Enviar o conteúdo da caixa
+        String content = getMessage(basePath + "_content");
+        if (content != null && !content.contains("Mensagem não encontrada")) {
+            if (placeholders != null) {
+                content = replacePlaceholders(content, placeholders);
+            }
+            player.sendMessage(content);
+        }
+        
+        // Enviar linhas adicionais do conteúdo
+        String[] additionalLines = {
+            "_welcome", "_sub", "_next", "_usage", "_attempt", "_time", "_reason",
+            "_action", "_strength", "_required", "_min", "_max", "_chars"
+        };
+        
+        for (String line : additionalLines) {
+            String additionalContent = getMessage(basePath + line);
+            if (additionalContent != null && !additionalContent.contains("Mensagem não encontrada")) {
+                if (placeholders != null) {
+                    additionalContent = replacePlaceholders(additionalContent, placeholders);
+                }
+                player.sendMessage(additionalContent);
+            }
+        }
+        
+        // Enviar a linha inferior da caixa
+        String bottomLine = getMessage(basePath + "_end");
+        if (bottomLine != null && !bottomLine.contains("Mensagem não encontrada")) {
+            player.sendMessage(bottomLine);
+        }
+    }
+    
+    /**
+     * Envia uma mensagem em caixa ASCII para um CommandSender
+     * @param sender O sender que receberá a mensagem
+     * @param basePath O caminho base da mensagem (ex: "login.success")
+     */
+    public void sendBoxMessage(org.bukkit.command.CommandSender sender, String basePath) {
+        sendBoxMessage(sender, basePath, null);
+    }
+    
+    /**
+     * Envia uma mensagem em caixa ASCII para um CommandSender com placeholders
+     * @param sender O sender que receberá a mensagem
+     * @param basePath O caminho base da mensagem (ex: "login.success")
+     * @param placeholders Os placeholders para substituir na mensagem
+     */
+    public void sendBoxMessage(org.bukkit.command.CommandSender sender, String basePath, Map<String, String> placeholders) {
+        // Enviar a linha superior da caixa
+        String topLine = getMessage(basePath);
+        if (topLine != null && !topLine.contains("Mensagem não encontrada")) {
+            sender.sendMessage(topLine);
+        }
+        
+        // Enviar o conteúdo da caixa
+        String content = getMessage(basePath + "_content");
+        if (content != null && !content.contains("Mensagem não encontrada")) {
+            if (placeholders != null) {
+                content = replacePlaceholders(content, placeholders);
+            }
+            sender.sendMessage(content);
+        }
+        
+        // Enviar linhas adicionais do conteúdo
+        String[] additionalLines = {
+            "_welcome", "_sub", "_next", "_usage", "_attempt", "_time", "_reason",
+            "_action", "_strength", "_required", "_min", "_max", "_chars"
+        };
+        
+        for (String line : additionalLines) {
+            String additionalContent = getMessage(basePath + line);
+            if (additionalContent != null && !additionalContent.contains("Mensagem não encontrada")) {
+                if (placeholders != null) {
+                    additionalContent = replacePlaceholders(additionalContent, placeholders);
+                }
+                sender.sendMessage(additionalContent);
+            }
+        }
+        
+        // Enviar a linha inferior da caixa
+        String bottomLine = getMessage(basePath + "_end");
+        if (bottomLine != null && !bottomLine.contains("Mensagem não encontrada")) {
+            sender.sendMessage(bottomLine);
+        }
+    }
+    
+    /**
+     * Substitui placeholders em uma mensagem
+     * @param message A mensagem original
+     * @param placeholders Os placeholders para substituir
+     * @return A mensagem com placeholders substituídos
+     */
+    private String replacePlaceholders(String message, Map<String, String> placeholders) {
+        if (placeholders != null) {
+            for (Map.Entry<String, String> entry : placeholders.entrySet()) {
+                message = message.replace("{" + entry.getKey() + "}", entry.getValue());
+            }
+        }
+        return message;
+    }
+    
+    /**
+     * Envia uma mensagem simples (sem caixa) para um jogador
+     * @param player O jogador que receberá a mensagem
+     * @param path O caminho da mensagem
+     */
+    public void sendSimpleMessage(org.bukkit.entity.Player player, String path) {
+        String message = getMessage(path);
+        if (message != null && !message.contains("Mensagem não encontrada")) {
+            player.sendMessage(message);
+        }
+    }
+    
+    /**
+     * Envia uma mensagem simples (sem caixa) para um CommandSender
+     * @param sender O sender que receberá a mensagem
+     * @param path O caminho da mensagem
+     */
+    public void sendSimpleMessage(org.bukkit.command.CommandSender sender, String path) {
+        String message = getMessage(path);
+        if (message != null && !message.contains("Mensagem não encontrada")) {
+            sender.sendMessage(message);
+        }
+    }
 }

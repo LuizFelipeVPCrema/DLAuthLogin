@@ -225,17 +225,17 @@ public class ProtectionListener implements Listener {
         
         // Verificar se precisa se registrar
         if (plugin.getProtectionManager().needsRegistration(uuid)) {
-            player.sendMessage(plugin.getMessageManager().getMessage("info.register_required"));
-            player.sendMessage(plugin.getMessageManager().getMessage("register.usage"));
+            plugin.getMessageManager().sendBoxMessage(player, "info.register_required");
+            plugin.getMessageManager().sendBoxMessage(player, "register.usage");
         } 
         // Verificar se precisa fazer login
         else if (plugin.getProtectionManager().needsLogin(uuid)) {
-            player.sendMessage(plugin.getMessageManager().getMessage("info.login_required"));
-            player.sendMessage(plugin.getMessageManager().getMessage("login.usage"));
+            plugin.getMessageManager().sendBoxMessage(player, "info.login_required");
+            plugin.getMessageManager().sendBoxMessage(player, "login.usage");
         } 
         // Caso genérico
         else {
-            player.sendMessage(plugin.getMessageManager().getMessage("protection.interaction_blocked"));
+            plugin.getMessageManager().sendBoxMessage(player, "protection.interaction_blocked");
         }
     }
 }

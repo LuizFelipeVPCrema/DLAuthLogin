@@ -22,7 +22,7 @@ public class RegisterCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player)) {
-            sender.sendMessage(plugin.getMessageManager().getMessage("general.player_only"));
+            plugin.getMessageManager().sendSimpleMessage(sender, "general.player_only");
             return true;
         }
         
@@ -31,19 +31,19 @@ public class RegisterCommand implements CommandExecutor {
         
         // Verificar permissão
         if (!player.hasPermission("dlauthlogin.register")) {
-            player.sendMessage(plugin.getMessageManager().getMessage("general.no_permission"));
+            plugin.getMessageManager().sendSimpleMessage(player, "general.no_permission");
             return true;
         }
         
         // Verificar se já está registrado
         if (plugin.getAuthManager().isRegistered(uuid)) {
-            player.sendMessage(plugin.getMessageManager().getMessage("register.already_registered"));
+            plugin.getMessageManager().sendBoxMessage(player, "register.already_registered");
             return true;
         }
         
         // Verificar argumentos
         if (args.length != 2) {
-            player.sendMessage(plugin.getMessageManager().getMessage("register.usage"));
+            plugin.getMessageManager().sendBoxMessage(player, "register.usage");
             return true;
         }
         
@@ -52,7 +52,7 @@ public class RegisterCommand implements CommandExecutor {
         
         // Verificar se as senhas coincidem
         if (!password.equals(confirmPassword)) {
-            player.sendMessage(plugin.getMessageManager().getMessage("register.password_mismatch"));
+            plugin.getMessageManager().sendBoxMessage(player, "register.password_mismatch");
             return true;
         }
         
@@ -62,7 +62,7 @@ public class RegisterCommand implements CommandExecutor {
             placeholders.put("min_length", String.valueOf(6));
             placeholders.put("strength_required", String.valueOf(plugin.getConfigManager().getPasswordStrength()));
             placeholders.put("current_strength", String.valueOf(PasswordUtils.getPasswordStrength(password)));
-            player.sendMessage(plugin.getMessageManager().getMessage("register.password_too_weak", placeholders));
+            plugin.getMessageManager().sendBoxMessage(player, "register.password_too_weak", placeholders);
             return true;
         }
         
@@ -70,14 +70,14 @@ public class RegisterCommand implements CommandExecutor {
         if (password.length() < 6) {
             Map<String, String> placeholders = new HashMap<>();
             placeholders.put("min_length", String.valueOf(6));
-            player.sendMessage(plugin.getMessageManager().getMessage("register.password_too_short", placeholders));
+            plugin.getMessageManager().sendBoxMessage(player, "register.password_too_short", placeholders);
             return true;
         }
         
         if (password.length() > 32) {
             Map<String, String> placeholders = new HashMap<>();
             placeholders.put("max_length", String.valueOf(32));
-            player.sendMessage(plugin.getMessageManager().getMessage("register.password_too_long", placeholders));
+            plugin.getMessageManager().sendBoxMessage(player, "register.password_too_long", placeholders);
             return true;
         }
         
@@ -86,18 +86,18 @@ public class RegisterCommand implements CommandExecutor {
         
         if (success) {
             // Registro bem-sucedido
-            player.sendMessage(plugin.getMessageManager().getMessage("register.success"));
+            plugin.getMessageManager().sendBoxMessage(player, "register.success");
             
             // Fazer login automático se configurado
             if (plugin.getConfigManager().getConfig().getBoolean("auto_login_after_register", false)) {
                 plugin.getAuthManager().loginPlayer(player, password);
                 plugin.getProtectionManager().removeProtectedPlayer(uuid);
-                player.sendMessage(plugin.getMessageManager().getMessage("login.success"));
+                plugin.getMessageManager().sendBoxMessage(player, "login.success");
             }
             
         } else {
             // Registro falhou
-            player.sendMessage(plugin.getMessageManager().getMessage("error.unknown_error"));
+            plugin.getMessageManager().sendBoxMessage(player, "error.unknown_error");
         }
         
         return true;
