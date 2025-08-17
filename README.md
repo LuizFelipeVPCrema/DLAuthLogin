@@ -3,7 +3,7 @@
 [![Java](https://img.shields.io/badge/Java-8+-orange.svg)](https://java.com/)
 [![Bukkit](https://img.shields.io/badge/Bukkit-1.13+-green.svg)](https://www.spigotmc.org/)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/Version-1.0.0-brightgreen.svg)](https://github.com/seu-usuario/DLAuthLogin/releases)
+[![Version](https://img.shields.io/badge/Version-1.0.0-brightgreen.svg)](https://github.com/LuizFelipeVPCrema/DLAuthLogin/releases)
 
 ## 📋 Descrição
 
@@ -53,7 +53,7 @@ O **DLAuthLogin** é um plugin de autenticação avançado para servidores Minec
 1. **Baixe o plugin**
    ```bash
    # Clone o repositório
-   git clone https://github.com/seu-usuario/DLAuthLogin.git
+   git clone https://github.com/LuizFelipeVPCrema/DLAuthLogin.git
    
    # Ou baixe o JAR da seção Releases
    ```
@@ -426,7 +426,7 @@ SOFTWARE.
 
 ## 📞 Suporte
 
-- **Issues**: [GitHub Issues](https://github.com/seu-usuario/DLAuthLogin/issues)
+- **Issues**: [GitHub Issues](https://github.com/LuizFelipeVPCrema/DLAuthLogin/issues)
 - **Discord**: [Servidor Discord](https://discord.gg/seu-servidor)
 - **Email**: suporte@dlauthlogin.com
 
