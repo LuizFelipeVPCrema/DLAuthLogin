@@ -428,15 +428,9 @@ SOFTWARE.
 - **Comunidade Minecraft** - Feedback e suporte
 - **Contribuidores** - Todos que ajudaram no projeto
 
-## 📞 Suporte
-
-- **Issues**: [GitHub Issues](https://github.com/LuizFelipeVPCrema/DLAuthLogin/issues)
-- **Discord**: [Servidor Discord](https://discord.gg/seu-servidor)
-- **Email**: suporte@dlauthlogin.com
-
 ## 🔄 Changelog
 
-### v1.0.0 (2024-01-15)
+### v1.0.0 (2025-08-15)
 - ✅ Sistema completo de autenticação
 - ✅ Proteções configuráveis
 - ✅ Sistema de sessões
@@ -448,4 +442,4 @@ SOFTWARE.
 
 ---
 
-**DLAuthLogin** - Protegendo seu servidor Minecraft com segurança e simplicidade! 🛡️⚡
+**DLAuthLogin** - Protegendo seu servidor Minecraft com segurança e simplicidade!
